@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            margin: 0 auto;
+        }
+        .menu{
+            display: block;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div style="height: 50px; background-color: blueviolet; color: white;">
+        东奥运维系统
+    </div>
+    <div style="position: absolute; top: 50px; left: 0; bottom: 0; width: 200px; background-color: cornflowerblue">
+        <a class="menu" href="/cmdb/userinfo/">用户管理</a>
+        <a class="menu" href="/cmdb/usergroup/">用户组管理</a>
+    </div>
+    <div style="position: absolute; top: 50px; left: 210px; bottom: 0; right: 0; overflow: auto">
+        <form action="/cmdb/userinfo/" method="post">
+            <h1>添加用户</h1>
+            <input type="text" name="user" placeholder="用户名">
+            <input type="text" name="pwd" placeholder="密码">
+            <input type="submit" value="提交">
+        </form>
+
+        <h1>用户管理:</h1>
+        <ul>
+            {% for row in user_list %}
+            <li>
+                <a href="/cmdb/userdetail-{{ row.id }}/">{{ row.username }}</a> |
+                <a href="/cmdb/useredit-{{ row.id }}/"> 编辑用户 </a> |
+                <a href="/cmdb/userdel-{{ row.id }}/"> 删除 </a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>

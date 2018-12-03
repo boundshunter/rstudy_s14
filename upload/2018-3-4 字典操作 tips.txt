@@ -1,0 +1,66 @@
+字典判断
+
+if dic.has_key('aaa'):
+	print('abc')
+	
+	
+for i in dict:
+	print(i,i.count('R'))
+	
+字典循环打印结果是乱序的
+
+dic.update() 修改内容
+
+dic.pop(key) #删除指定key value
+
+dic.get("abc") #有就取值，没有就返回None
+
+b = dic.get("abc")
+
+if b:
+	print(b)
+else：
+	xxx
+	
+	print(a,'\t'.join(b)) 列表变字符串，以\t 分隔
+	
+以空格为分隔符的文件，转换为字典
+第一列 用户
+
+第二列 年龄
+
+第三列 手机号
+
+第四列 邮箱
+
+第五列 邮箱
+
+
+employee_list = {}
+with open(dic,r) as f:
+	for i in f.readlines():
+		line = i.strip().split() #去空格，以空格为分隔符
+		employee_list[line[0]] = line[1:]
+		
+查询结果高亮
+
+
+
+a='guanduanjian'
+
+a.find('jian')
+查找jian 字符串的开始位置
+
+取jian的位置
+
+e=a.finde('jian')
+
+
+
+a = "guanduanjian"
+b = "duan"
+e = a.find(b) # 查找b 的起始位置
+l = len(b)  # 计算b中字符长度 
+print a[:e] + "\033[35;1m%s\033[0m"%b +a[e+4:]
+打印 b位置前的字符，连接高亮的b，打印b起始位置+b字符长度位置后的字符。
+高亮显示 b (查找内容)
